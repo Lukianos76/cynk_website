@@ -1,5 +1,15 @@
-/*--  HEADER  --*/
+/*--  GENERAL  --*/
+html{
+    height: 100%;
+}
+body {
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
 
+
+/*--  HEADER  --*/
 .uk-navbar-container:not(.uk-navbar-transparent){
     background-color: #323f4b;
 }
@@ -52,4 +62,19 @@
     font-size: 12px;
     text-decoration: underline !important;
     font-family: "Open Sans Light", sans-serif;
+}
+
+/*--  FOOTER  --*/
+footer{
+    position: absolute;
+    bottom: 0;
+    background-color: #1f2933;
+    width: 100%;
+}
+footer p{
+    text-align: center;
+    color: #e8eff6;
+    font-size: 12px;
+    font-family: "Open Sans", sans-serif;
+    padding: 8px 0;
 }
