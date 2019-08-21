@@ -1,0 +1,55 @@
+/*--  HEADER  --*/
+
+.uk-navbar-container:not(.uk-navbar-transparent){
+    background-color: #323f4b;
+}
+
+    /*--  NAV  --*/
+        /*--  GENERAL  --*/
+.uk-navbar-dropdown{
+    background-color: #1f2933;
+    width: 235px;
+}
+.uk-navbar-nav>li>a{
+    font-size: 36px;
+    padding-left: 36px;
+}
+.uk-navbar-nav>li>a, .uk-navbar-dropdown-nav>li>a{
+    color: #e8eff6;
+}
+.uk-navbar-nav>li>a:active, .uk-navbar-nav>li>a:focus, .uk-navbar-nav>li>a:hover, .uk-navbar-dropdown-nav>li>a:hover, .uk-navbar-dropdown-nav>li>a:focus{
+    color: #cbd2d9;
+}
+
+        /*--  MAIN NAV  --*/
+.main-nav a{
+    font-size: 18px;
+    font-family: "Open Sans SemiBold", sans-serif;
+}
+.main-nav i{
+    margin-right: 18px;
+}
+
+        /*--  SOCIAL NAV  --*/
+.social-nav{
+    width:164px;
+    margin: 0 auto;
+    padding: 16px 0
+}
+.social-nav a{
+    font-size: 24px;
+    margin: 0 16px;
+}
+.social-nav li, .social-nav li a{
+    display: inline;
+}
+
+        /*--  LEGALS NAV --*/
+.legals-nav{
+    padding-bottom: 12px !important;
+}
+.legals-nav a{
+    font-size: 12px;
+    text-decoration: underline !important;
+    font-family: "Open Sans Light", sans-serif;
+}
