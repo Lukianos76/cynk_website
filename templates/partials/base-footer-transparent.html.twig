@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=EB+Garamond|Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" rel="stylesheet ">
+
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.7/css/uikit.min.css" />
+
+    <link rel="stylesheet" href="css/cynk.css" />
+
+
+    <title>Artiste Peintre Abstrait - Cynk - {% block title %}{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+</head>
+<body>
+{% include "partials/_header.html.twig" %}
+
+{% block body %}{% endblock %}
+
+{% include "partials/_footer-transparent.html.twig" %}
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- UIkit JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.7/js/uikit.min.js"></script>
+
+
+{% block javascripts %}{% endblock %}
+</body>
+</html>

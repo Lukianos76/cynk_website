@@ -3,10 +3,11 @@ html{
     height: 100%;
 }
 body {
-    min-height: 100%;
+    height: 100%;
     margin: 0;
     padding: 0;
 }
+
 
 
 /*--  HEADER  --*/
@@ -71,10 +72,59 @@ footer{
     background-color: #1f2933;
     width: 100%;
 }
+footer.transparent{
+    background-color: transparent;
+}
 footer p{
     text-align: center;
     color: #e8eff6;
     font-size: 12px;
     font-family: "Open Sans", sans-serif;
     padding: 8px 0;
+    margin-block-end: 0;
 }
+
+/*--  HOME  --*/
+.full-page-img {
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    margin-top: -80px;
+}
+
+#home h2 {
+    color: #e8eff6;
+    font-size: 48px;
+    font-family: "EB Garamond SemiBold", serif;
+    font-style: italic;
+
+}
+#home .uk-button-default{
+    background-color: #127fbf;
+    border: none;
+    border-radius: 6px;
+}
+#home a{
+    font-family: "Open Sans", sans-serif;
+    font-size: 24px;
+    padding: 18px 36px;
+    color: #e8eff6;
+    text-transform: uppercase;
+}
+#home a.uk-button-default:hover{
+    background-color: #0b69a3;
+}
+
+    /*--  for mobile  --*/
+@media screen and (max-width: 640px) {
+    #home h2 {
+        font-size: 30px;
+    }
+    #home a{
+        font-size: 18px;
+        padding: 14px 24px;
+    }
+}
+
