@@ -1,0 +1,12 @@
+liip_imagine:
+    resolvers:
+        default:
+            web_path: ~
+
+    filter_sets:
+        cache: ~
+        painting_thumb:
+            quality: 75
+            filters:
+               relative_resize:
+                    widen: 500

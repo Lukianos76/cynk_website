@@ -1,0 +1,56 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block stylesheets %}
+
+{% endblock %}
+
+{% block body %}
+
+    <div id="gallery" uk-grid>
+        <div class="uk-width-1-5 gallery-nav">
+            <ul  uk-scrollspy-nav="closest: li; scroll: true; offset: 100" class="uk-nav uk-nav-default" uk-sticky="offset: 152;">
+                {% set date = null %}
+                {% for painting in paintings %}
+                    {% if date != painting.year %}
+                        {% set date = painting.year %}
+                        <li><a href="#annee{{ date }}">{{ date }}</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="uk-width-4-5 painting-grid">
+            <div class="uk-container">
+            {% set date = null %}
+            {% for painting in paintings %}
+                {% if date != painting.year %}
+                    {% if date != null %}
+                        </div>
+                    {% endif %}
+                    {% set date = painting.year %}
+                    <div id="annee{{ date }}" class="uk-child-width-1-2@m" uk-grid="masonry:true;" uk-scrollspy="target: > img; cls: uk-animation-fade; delay: 500" >
+                {% endif %}
+                        <div class="painting-container">
+                            <div class="uk-transition-toggle uk-width-1-1 painting uk-padding-remove uk-inline" >
+                                <img class="uk-width-1-1 uk-padding-remove" data-src="{{ vich_uploader_asset(painting, 'imageFile') | imagine_filter('painting_thumb') }}" alt="{{ painting.title }}" title="{{ painting.title }}" uk-img>
+                                <div class="uk-transition-fade uk-overlay uk-overlay-default painting-overlay uk-position-cover uk-flex uk-flex-center uk-flex-middle uk-overlay uk-position-cover">
+                                    <h3 class="uk-text-center">{{ painting.title }}</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="my-id" class="uk-modal-full" uk-modal>
+                            <div class="uk-modal-dialog">
+                                <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
+                            </div>
+                        </div>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+
+{% endblock %}

@@ -7,8 +7,16 @@ body {
     margin: 0;
     padding: 0;
 }
-
-
+#site{
+    padding-bottom: 35px;
+    width: 100%;
+    min-height: 100%;
+    height: 100%;
+    position: relative;
+}
+* {
+    -moz-box-sizing: border-box; box-sizing: border-box;
+}
 
 /*--  HEADER  --*/
 .uk-navbar-container:not(.uk-navbar-transparent){
@@ -20,6 +28,7 @@ body {
 .uk-navbar-dropdown{
     background-color: #1f2933;
     width: 235px;
+    z-index: 9999;
 }
 .uk-navbar-nav>li>a{
     font-size: 36px;
@@ -67,10 +76,12 @@ body {
 
 /*--  FOOTER  --*/
 footer{
-    position: absolute;
     bottom: 0;
+    left:0;
+    right:0;
     background-color: #1f2933;
     width: 100%;
+    height: 35px;
 }
 footer.transparent{
     background-color: transparent;
@@ -92,6 +103,7 @@ footer p{
     background-size: cover;
     width: 100%;
     margin-top: -80px;
+    margin-bottom: -35px;
 }
 
 #home h2 {
@@ -127,4 +139,62 @@ footer p{
         padding: 14px 24px;
     }
 }
+
+/*--  Gallery  --*/
+    /*-- NAV  --*/
+.gallery-nav{
+    margin-top: 72px;
+    z-index: 0;
+}
+.gallery-nav ul a{
+     font-size: 24px;
+     font-family: "Open Sans SemiBold", sans-serif;
+     letter-spacing: -1.5px;
+     color : #0b69a3;
+     text-shadow: #52606d 1px 1px 3px;
+     padding: 0 0 0 36px;
+     line-height: 1.3em;
+     border-bottom: 1px solid #0b69a3;
+     width: 90px;
+     box-shadow: 0 3px 3px -3px #52606d;
+}
+.gallery-nav ul .uk-active a, .gallery-nav ul .gallery-nav .uk-nav-default>li>a:focus, .gallery-nav .uk-nav-default>li>a:hover{
+    font-size: 48px;
+    font-family: "Open Sans ExtraBold", sans-serif;
+    color : #035388;
+    line-height: 1em;
+    border-bottom: 1px solid #035388;
+    width: 145px;
+}
+        /*--  for mobile  --*/
+@media screen and (max-width: 640px) {
+    .gallery-nav ul a{
+        font-size: 18px;
+        width: 50px;
+        padding: 0 0 0 12px;
+}
+    .gallery-nav ul .uk-active a, .gallery-nav ul .gallery-nav .uk-nav-default>li>a:focus, .gallery-nav .uk-nav-default>li>a:hover{
+        font-size: 30px;
+        width: 80px;
+
+    }
+}
+
+
+    /*--  PAINTING  --*/
+.painting{
+    margin-top: 18px !important;
+}
+.painting-overlay{
+    background-color: rgba(3,83,136,0.7);
+    backdrop-filter: grayscale(1) contrast(3) blur(1px)
+}
+.painting-container h3{
+    font-size: 30px;
+    font-family: "EB Garamond ExtraBold";
+    text-transform: uppercase;
+    color: #e4eef6;
+}
+
+
 
