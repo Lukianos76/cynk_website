@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=EB+Garamond|Open+Sans&display=swap" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" rel="stylesheet ">
+
+        <!-- UIkit CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.7/css/uikit.min.css" />
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/black/pace-theme-loading-bar.min.css">
+
+        <!-- Custom Style  -->
+        <link rel="stylesheet" href="css/cynk.css" />
+
+
+        <title>Artiste Peintre Abstrait - Cynk - {% block title %}{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body style="height: 100%">
+
+        <div id="page_overlay"></div>
+
+        {% include "partials/_header.html.twig" %}
+
+        {% block body %}{% endblock %}
+
+        {% include "partials/_footer.html.twig" %}
+
+
+        <!-- jQuery -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <!-- UIkit JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.7/js/uikit.min.js"></script>
+
+        <!-- PACE -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+
+        <script>
+            Pace.on("done", function() {
+                $('#page_overlay').delay(300).fadeOut(600);
+            });
+        </script>
+
+
+        {% block javascripts %}{% endblock %}
+        {% block modal %}{% endblock %}
+    </body>
+</html>

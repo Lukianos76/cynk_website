@@ -5,10 +5,18 @@ html{
 body {
     margin: 0;
     padding: 0;
-
+}
+.full-page-img {
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    margin-top: -80px;
+    margin-bottom: -35px;
 }
 
-/*-- PACE (Loading)  --*/
+    /*-- PACE (Loading)  --*/
 #page_overlay {
     position: fixed;
     z-index: 2000;
@@ -115,16 +123,6 @@ footer p{
 }
 
 /*--  HOME  --*/
-.full-page-img {
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    margin-top: -80px;
-    margin-bottom: -35px;
-}
-
 #home h2 {
     color: #e8eff6;
     font-size: 48px;
@@ -218,5 +216,50 @@ footer p{
     color: #e4eef6;
 }
 
+/*--  ABOUT --*/
+.about-title h3{
+    font-size: 30px;
+    font-family: "EB Garamond SemiBold", serif;
+    color: #035388;
+    margin: 0;
+    text-transform: uppercase;
+    line-height: 1em;
+}
+.about-title h4{
+    font-size: 30px;
+    font-family: "Open Sans", sans-serif;
+    font-style: italic;
+    color: #127fbf;
+    margin: 0;
+    line-height: 1em;
+}
+.about-content ul a{
+    color: #e4eef6;
+    font-size: 24px;
+}
+.circle-icon {
+    background: #035388;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    vertical-align: middle;
+    padding: 8px;
+}
+.about-content{
+    max-width: 550px;
+    margin: 80px 24px 0;
+}
+.about-content p{
+    color: #3e4c59;
+    font-size: 16px;
+    font-family: "Open Sans Light", sans-serif;
+    text-align: justify;
+
+}
+.about-content li, .about-content li a{
+    display: inline-block;
+}
 
 
