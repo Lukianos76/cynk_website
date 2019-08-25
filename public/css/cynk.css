@@ -71,7 +71,8 @@ body {
         /*--  MAIN NAV  --*/
 .main-nav a{
     font-size: 18px;
-    font-family: "Open Sans SemiBold", sans-serif;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
 }
 .main-nav i{
     margin-right: 18px;
@@ -98,7 +99,8 @@ body {
 .legals-nav a{
     font-size: 12px;
     text-decoration: underline !important;
-    font-family: "Open Sans Light", sans-serif;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
 }
 
 /*--  FOOTER  --*/
@@ -126,7 +128,8 @@ footer p{
 #home h2 {
     color: #e8eff6;
     font-size: 48px;
-    font-family: "EB Garamond SemiBold", serif;
+    font-family: "EB Garamond", serif;
+    font-weight: 600;
     font-style: italic;
 
 }
@@ -168,34 +171,36 @@ footer p{
 }
 .gallery-nav ul a{
      font-size: 24px;
-     font-family: "Open Sans SemiBold", sans-serif;
+     font-family: "Open Sans", sans-serif;
+     font-weight: 400;
      letter-spacing: -1.5px;
      color : #0b69a3;
      text-shadow: #52606d 1px 1px 3px;
      padding: 0 0 0 36px;
      line-height: 1.3em;
      border-bottom: 1px solid #0b69a3;
-     width: 90px;
+     width: 55px;
      box-shadow: 0 3px 3px -3px #52606d;
 }
 .gallery-nav ul .uk-active a, .gallery-nav ul .gallery-nav .uk-nav-default>li>a:focus, .gallery-nav .uk-nav-default>li>a:hover{
     font-size: 48px;
-    font-family: "Open Sans ExtraBold", sans-serif;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 800;
     color : #035388;
     line-height: 1em;
     border-bottom: 1px solid #035388;
-    width: 145px;
+    width: 115px;
 }
         /*--  for mobile  --*/
 @media screen and (max-width: 640px) {
     .gallery-nav ul a{
         font-size: 18px;
-        width: 50px;
+        width: 40px;
         padding: 0 0 0 12px;
 }
     .gallery-nav ul .uk-active a, .gallery-nav ul .gallery-nav .uk-nav-default>li>a:focus, .gallery-nav .uk-nav-default>li>a:hover{
         font-size: 30px;
-        width: 80px;
+        width: 65px;
 
     }
 }
@@ -211,7 +216,8 @@ footer p{
 }
 .painting-container h3{
     font-size: 30px;
-    font-family: "EB Garamond ExtraBold", serif;
+    font-family: "EB Garamond", serif;
+    font-weight: 800;
     text-transform: uppercase;
     color: #e4eef6;
 }
@@ -219,7 +225,8 @@ footer p{
 /*--  ABOUT --*/
 .about-title h3{
     font-size: 30px;
-    font-family: "EB Garamond SemiBold", serif;
+    font-family: "EB Garamond", serif;
+    font-weight: 600;
     color: #035388;
     margin: 0;
     text-transform: uppercase;
@@ -254,7 +261,8 @@ footer p{
 .about-content p{
     color: #3e4c59;
     font-size: 16px;
-    font-family: "Open Sans Light", sans-serif;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
     text-align: justify;
 
 }
