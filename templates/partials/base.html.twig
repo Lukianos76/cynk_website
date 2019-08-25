@@ -11,6 +11,9 @@
         <!-- UIkit CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.7/css/uikit.min.css" />
 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/black/pace-theme-loading-bar.min.css">
+
+        <!-- Custom Style  -->
         <link rel="stylesheet" href="css/cynk.css" />
 
 
@@ -18,20 +21,33 @@
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        <div id="site">
+
+        <div id="page_overlay"></div>
+
         {% include "partials/_header.html.twig" %}
 
         {% block body %}{% endblock %}
 
         {% include "partials/_footer.html.twig" %}
-        </div>
 
+
+        <!-- jQuery -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
         <!-- UIkit JS -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.7/js/uikit.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.7/js/uikit.min.js"></script>
+
+        <!-- PACE -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+
+        <script>
+            Pace.on("done", function() {
+                $('#page_overlay').delay(300).fadeOut(600);
+            });
+        </script>
 
 
         {% block javascripts %}{% endblock %}
+        {% block modal %}{% endblock %}
     </body>
 </html>

@@ -1,9 +1,8 @@
 {% extends 'partials/base.html.twig' %}
 
-{% block title %}Accueil{% endblock %}
+{% block title %}Mes oeuvres{% endblock %}
 
 {% block stylesheets %}
-
 {% endblock %}
 
 {% block body %}
@@ -15,7 +14,7 @@
                 {% for painting in paintings %}
                     {% if date != painting.year %}
                         {% set date = painting.year %}
-                        <li><a href="#annee{{ date }}">{{ date }}</a></li>
+                        <li ><a href="#annee{{ date }}">{{ date }}</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -29,21 +28,21 @@
                         </div>
                     {% endif %}
                     {% set date = painting.year %}
-                    <div id="annee{{ date }}" class="uk-child-width-1-2@m" uk-grid="masonry:true;" uk-scrollspy="target: > img; cls: uk-animation-fade; delay: 500" >
+                    <div id="annee{{ date }}" class="uk-child-width-1-2@m" uk-grid="masonry:true;" uk-scrollspy="target: > .painting-container; cls: uk-animation-fade; delay: 800" >
                 {% endif %}
-                        <div class="painting-container">
-                            <div class="uk-transition-toggle uk-width-1-1 painting uk-padding-remove uk-inline" >
+                        <div class="painting-container" id="{{ painting.slug }}">
+                            <a uk-toggle="target: #modal-{{ painting.slug }}">
+                                <div class="uk-transition-toggle uk-width-1-1 painting uk-padding-remove uk-inline" >
                                 <img class="uk-width-1-1 uk-padding-remove" data-src="{{ vich_uploader_asset(painting, 'imageFile') | imagine_filter('painting_thumb') }}" alt="{{ painting.title }}" title="{{ painting.title }}" uk-img>
                                 <div class="uk-transition-fade uk-overlay uk-overlay-default painting-overlay uk-position-cover uk-flex uk-flex-center uk-flex-middle uk-overlay uk-position-cover">
                                     <h3 class="uk-text-center">{{ painting.title }}</h3>
                                 </div>
-                            </div>
+                                </div>
+                            </a>
                         </div>
-                        <div id="my-id" class="uk-modal-full" uk-modal>
-                            <div class="uk-modal-dialog">
-                                <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
-                            </div>
-                        </div>
+
+
+
             {% endfor %}
             </div>
         </div>
@@ -51,6 +50,16 @@
 
 {% endblock %}
 
-{% block javascripts %}
+{% block modal %}
+    {% for painting in paintings %}
+        <div id="modal-{{painting.slug}}" class="uk-flex-top uk-modal" uk-modal>
+            <div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical">
+                <button class="uk-modal-close-outside" type="button" uk-close></button>
+                <img src="{{ vich_uploader_asset(painting, 'imageFile')}}" alt="{{ painting.title }}" title="{{ painting.title }}">
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
 
+{% block javascripts %}
 {% endblock %}
