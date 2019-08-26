@@ -7,6 +7,19 @@
 
 {% block body %}
 
+    <nav class="uk-hidden@m uk-navbar-container gallery-navbar-container" uk-sticky="offset: 80" uk-navbar>
+        <div class="uk-navbar-center gallery-nav">
+            <ul uk-scrollspy-nav="closest: li; scroll: true; offset: 178" class="uk-navbar-nav">
+                {% set date = null %}
+                {% for painting in paintings %}
+                    {% if date != painting.year %}
+                        {% set date = painting.year %}
+                        <li ><a href="#annee{{ date }}">{{ date }}</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+    </nav>
 
     <div id="gallery" >
         <div class="uk-width-2-3@l uk-width-1-2@xl uk-align-center uk-text-center gallery-text">
@@ -21,8 +34,8 @@
             </p>
         </div>
         <div uk-grid>
-            <div class="uk-width-1-5 gallery-nav">
-                <ul  uk-scrollspy-nav="closest: li; scroll: true; offset: 100" class="uk-nav uk-nav-default" uk-sticky="offset: 152;">
+            <div class="uk-width-1-5 uk-visible@m gallery-nav">
+                <ul  uk-scrollspy-nav="closest: li; scroll: true; offset: 98" class="uk-nav uk-nav-default" uk-sticky="offset: 152;">
                     {% set date = null %}
                     {% for painting in paintings %}
                         {% if date != painting.year %}
@@ -32,7 +45,7 @@
                     {% endfor %}
                 </ul>
             </div>
-            <div class="uk-width-4-5 painting-grid">
+            <div class="uk-width-4-5@m uk-width-1-1 painting-grid">
                 <div class="uk-container" uk-lightbox="animation: slide">
                 {% set date = null %}
                 {% for painting in paintings %}
@@ -41,7 +54,7 @@
                         </div>
                         {% endif %}
                         {% set date = painting.year %}
-                        <div id="annee{{ date }}" class="uk-child-width-1-2@m year-container" uk-grid="masonry:true;" uk-scrollspy="target: > .painting-container; cls: uk-animation-fade; delay: 800" >
+                        <div id="annee{{ date }}" class="uk-child-width-1-2@s year-container" uk-grid="masonry:true;" uk-scrollspy="target: > .painting-container; cls: uk-animation-fade; delay: 300" >
                     {% endif %}
                             <div class="painting-container" id="{{ painting.slug }}">
                                 <a href="{{ vich_uploader_asset(painting, 'imageFile')  | imagine_filter('painting_watermark') }}" data-caption="{{painting.title}}">
