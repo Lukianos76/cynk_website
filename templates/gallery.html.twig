@@ -58,6 +58,7 @@
                     {% if date != painting.year %}
                         {% if date != null %}
                         </div>
+                        <div class="year-divider"></div>
                         {% endif %}
                         {% set date = painting.year %}
                         <div id="annee{{ date }}" class="uk-child-width-1-2@s year-container" uk-grid="masonry:true;" uk-scrollspy="target: > .painting-container; cls: uk-animation-fade; delay: 300" >

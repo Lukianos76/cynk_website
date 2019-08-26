@@ -13,7 +13,7 @@ p{
     font-weight: 300;
 }
 .uk-navbar-nav>li>a, .uk-navbar-dropdown-nav>li>a, footer p, #home h2, #home a, .pace .pace-progress, .about-content a{
-    color: #e8eff6;
+    color: #f5f7fa;
 }
 .uk-navbar-nav>li>a:active, .uk-navbar-nav>li>a:focus, .uk-navbar-nav>li>a:hover, .uk-navbar-dropdown-nav>li>a:hover,
 .uk-navbar-dropdown-nav>li>a:focus, .uk-navbar-nav>li:hover>a, .uk-navbar-nav>li>a.uk-open{
@@ -174,7 +174,7 @@ footer.transparent{
 /*--  Gallery  --*/
 #gallery{
     padding-bottom: 18px;
-    background-color: #e4e7eb;
+    background-color: #f5f7fa;
 }
 .gallery-text h2{
     text-transform: uppercase;
@@ -209,7 +209,7 @@ img.painting{
     letter-spacing: -1.5px;
     padding: 0 0 0 36px;
     line-height: 1.3em;
-    border-bottom: 1px solid #0b69a3;
+    border-bottom: 2px solid #0b69a3;
     width: 55px;
     color : #0b69a3;
     text-shadow: #52606d 1px 1px 3px;
@@ -221,10 +221,11 @@ img.painting{
     font-weight: 800;
     line-height: 1em;
     width: 115px;
-    border-bottom: #035388;
+    border-bottom: 2px solid #035388;
 }
-.gallery-navbar-container{
-    background-color: #1f2933;
+.year-divider{
+    border-bottom: 5px solid #cbd2d9;
+    margin: 18px 0 ;
 }
         /*--  for mobile  --*/
 @media screen and (max-width: 959px) {
@@ -269,6 +270,9 @@ img.painting{
 }
 
 /*--  ABOUT --*/
+#about{
+    background-color: #f5f7fa
+}
 .about-title h3{
     font-size: 30px;
     font-family: "EB Garamond", serif;
