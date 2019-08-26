@@ -26,46 +26,27 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #323f4b;
 }
 .pace {
     z-index: 99999;
 }
 .pace .pace-progress {
-    background: #e8eff6;
-    color: #e8eff6;
     line-height: 60px;
     font-weight: 700;
     font-family: "Open Sans", sans-serif;
-    -webkit-box-shadow: 120px 0 #fff, 240px 0 #323f4b;
-    -ms-box-shadow: 120px 0 #fff,240px 0 #323f4b;
-    box-shadow: 120px 0 #fff, 240px 0 #323f4b;
-}
-.pace .pace-activity {
-    box-shadow: inset 0 0 0 2px #e8eff6, inset 0 0 0 7px #323f4b;
 }
 
 /*--  HEADER  --*/
-.uk-navbar-container:not(.uk-navbar-transparent){
-    background-color: #323f4b;
-}
 
     /*--  NAV  --*/
         /*--  GENERAL  --*/
 .uk-navbar-dropdown{
-    background-color: #1f2933;
     width: 235px;
     z-index: 9999;
 }
 .uk-navbar-nav>li>a{
     font-size: 36px;
     padding-left: 36px;
-}
-.uk-navbar-nav>li>a, .uk-navbar-dropdown-nav>li>a{
-    color: #e8eff6;
-}
-.uk-navbar-nav>li>a:active, .uk-navbar-nav>li>a:focus, .uk-navbar-nav>li>a:hover, .uk-navbar-dropdown-nav>li>a:hover, .uk-navbar-dropdown-nav>li>a:focus{
-    color: #cbd2d9;
 }
 
         /*--  MAIN NAV  --*/
@@ -78,23 +59,9 @@ body {
     margin-right: 18px;
 }
 
-        /*--  SOCIAL NAV  --*/
-.social-nav{
-    width:164px;
-    margin: 0 auto;
-    padding: 16px 0
-}
-.social-nav a{
-    font-size: 24px;
-    margin: 0 16px;
-}
-.social-nav li, .social-nav li a{
-    display: inline;
-}
-
         /*--  LEGALS NAV --*/
 .legals-nav{
-    padding-bottom: 12px !important;
+    padding: 12px 0 !important;
 }
 .legals-nav a{
     font-size: 12px;
@@ -108,16 +75,11 @@ footer{
     bottom: 0;
     left:0;
     right:0;
-    background-color: #1f2933;
     width: 100%;
     height: 35px;
 }
-footer.transparent{
-    background-color: transparent;
-}
 footer p{
     text-align: center;
-    color: #e8eff6;
     font-size: 12px;
     font-family: "Open Sans", sans-serif;
     padding: 8px 0;
@@ -126,7 +88,6 @@ footer p{
 
 /*--  HOME  --*/
 #home h2 {
-    color: #e8eff6;
     font-size: 48px;
     font-family: "EB Garamond", serif;
     font-weight: 600;
@@ -134,7 +95,6 @@ footer p{
 
 }
 #home .uk-button-default{
-    background-color: #127fbf;
     border: none;
     border-radius: 6px;
 }
@@ -142,11 +102,7 @@ footer p{
     font-family: "Open Sans", sans-serif;
     font-size: 24px;
     padding: 18px 36px;
-    color: #e8eff6;
     text-transform: uppercase;
-}
-#home a.uk-button-default:hover{
-    background-color: #0b69a3;
 }
 
     /*--  for mobile  --*/
@@ -162,7 +118,21 @@ footer p{
 
 /*--  Gallery  --*/
 #gallery{
-    background-color: #e8eff6;
+    padding-bottom: 18px;
+}
+.gallery-text h2{
+    text-transform: uppercase;
+    font-size: 36px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 800;
+}
+.gallery-text p{
+    font-size: 16px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+}
+.gallery-text{
+    padding: 18px 12px 0 ;
 }
     /*-- NAV  --*/
 .gallery-nav{
@@ -174,22 +144,20 @@ footer p{
      font-family: "Open Sans", sans-serif;
      font-weight: 400;
      letter-spacing: -1.5px;
-     color : #0b69a3;
-     text-shadow: #52606d 1px 1px 3px;
      padding: 0 0 0 36px;
      line-height: 1.3em;
-     border-bottom: 1px solid #0b69a3;
+     border-bottom: 1px solid;
      width: 55px;
-     box-shadow: 0 3px 3px -3px #52606d;
 }
 .gallery-nav ul .uk-active a, .gallery-nav ul .gallery-nav .uk-nav-default>li>a:focus, .gallery-nav .uk-nav-default>li>a:hover{
     font-size: 48px;
     font-family: "Open Sans", sans-serif;
     font-weight: 800;
-    color : #035388;
     line-height: 1em;
-    border-bottom: 1px solid #035388;
     width: 115px;
+}
+.year-container{
+    padding: 18px 0;
 }
         /*--  for mobile  --*/
 @media screen and (max-width: 640px) {
@@ -207,19 +175,17 @@ footer p{
 
 
     /*--  PAINTING  --*/
-.painting{
-    margin-top: 18px !important;
-}
 .painting-overlay{
-    background-color: rgba(3,83,136,0.7);
     backdrop-filter: grayscale(1) contrast(3) blur(1px)
+}
+.painting-container{
+    padding: 0 18px;
 }
 .painting-container h3{
     font-size: 30px;
     font-family: "EB Garamond", serif;
     font-weight: 800;
     text-transform: uppercase;
-    color: #e4eef6;
 }
 
 /*--  ABOUT --*/
@@ -227,7 +193,6 @@ footer p{
     font-size: 30px;
     font-family: "EB Garamond", serif;
     font-weight: 600;
-    color: #035388;
     margin: 0;
     text-transform: uppercase;
     line-height: 1em;
@@ -236,16 +201,13 @@ footer p{
     font-size: 30px;
     font-family: "Open Sans", sans-serif;
     font-style: italic;
-    color: #127fbf;
     margin: 0;
     line-height: 1em;
 }
-.about-content ul a{
-    color: #e4eef6;
+.about-content a{
     font-size: 24px;
 }
 .circle-icon {
-    background: #035388;
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -259,7 +221,6 @@ footer p{
     margin: 80px 24px 0;
 }
 .about-content p{
-    color: #3e4c59;
     font-size: 16px;
     font-family: "Open Sans", sans-serif;
     font-weight: 300;
@@ -268,6 +229,15 @@ footer p{
 }
 .about-content li, .about-content li a{
     display: inline-block;
+}
+@media screen and (max-width: 1200px) {
+    .about-content{
+        max-width: 100%;
+        margin-top: 36px
+    }
+    .about-container{
+        padding-bottom: 36px;
+    }
 }
 
 

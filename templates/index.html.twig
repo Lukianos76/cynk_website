@@ -1,6 +1,8 @@
-{% extends 'partials/base-footer-transparent.html.twig' %}
+{% extends 'partials/base.html.twig' %}
 
 {% block title %}Accueil{% endblock %}
+
+{% block bodystyle %}style="height: 100%"{% endblock %}
 
 {% block body %}
 
@@ -13,3 +15,5 @@
     </div>
 
 {% endblock %}
+
+{% block footerstyle %}class="transparent"{% endblock %}

@@ -15,12 +15,13 @@
 
         <!-- Custom Style  -->
         <link rel="stylesheet" href="css/cynk.css" />
+        <link rel="stylesheet" href="css/cynk_color.css" />
 
 
         <title>Artiste Peintre Abstrait - Cynk - {% block title %}{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
     </head>
-    <body>
+    <body {% block bodystyle %}{% endblock %}>
 
         <div id="page_overlay"></div>
 
@@ -28,7 +29,9 @@
 
         {% block body %}{% endblock %}
 
-        {% include "partials/_footer.html.twig" %}
+        <footer {% block footerstyle %}{% endblock %}>
+            <p>© 2019 Cynk. Tous droits réservés.</p>
+        </footer>
 
 
         <!-- jQuery -->
@@ -48,6 +51,5 @@
 
 
         {% block javascripts %}{% endblock %}
-        {% block modal %}{% endblock %}
     </body>
 </html>

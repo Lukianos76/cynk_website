@@ -1,6 +1,8 @@
-{% extends 'partials/base-full-height.html.twig' %}
+{% extends 'partials/base.html.twig' %}
 
-{% block title %}A propos de moi{% endblock %}
+{% block title %}À propos de moi{% endblock %}
+
+{% block bodystyle%}style="height: 100%"{% endblock %}
 
 {% block body %}
 
@@ -12,11 +14,7 @@
                     <h3>Cynk</h3>
                     <h4>Artiste Peintre</h4>
                 </div>
-                <ul class="">
-                    <li><a href="#"><i class="fab fa-facebook-f circle-icon"></i></a></li>
-                    <li><a target="_blank" href="https://www.instagram.com/__cynk__"><i class="fab fa-instagram circle-icon"></i></a></li>
-                    <li><a href="#"><i class="fab fa-twitter circle-icon"></i></a></li>
-                </ul>
+                <a target="_blank" href="https://www.instagram.com/__cynk__"><i class="fab fa-instagram circle-icon"></i></a>
                 </div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus congue blandit nunc, a pulvinar felis
                     finibus a. Donec sed fringilla nibh. Integer justo dolor, feugiat sed elit non, sagittis viverra nulla.
@@ -38,5 +36,37 @@
             </div>
         </div>
     </div>
+    <div class="uk-hidden@l">
+        <img data-src="imgs/about_bg.jpg" uk-img>
+        <div class="about-container uk-flex uk-flex-center">
+            <div class="about-content">
+                <div class="about-header uk-flex uk-flex-middle" uk-grid>
+                <div class="uk-width-expand about-title">
+                    <h3>Cynk</h3>
+                    <h4>Artiste Peintre</h4>
+                </div>
+                <a target="_blank" href="https://www.instagram.com/__cynk__"><i class="fab fa-instagram circle-icon"></i></a>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus congue blandit nunc, a pulvinar felis
+                    finibus a. Donec sed fringilla nibh. Integer justo dolor, feugiat sed elit non, sagittis viverra nulla.
+                    Nunc eget odio purus. Nunc dapibus enim non maximus iaculis. Integer commodo at enim sit amet accumsan.
+                    Mauris ut condimentum ex. Etiam sed ante et purus suscipit gravida eget at leo. Sed quis nulla ac tellus
+                    cursus gravida. Pellentesque sit amet leo diam. Cras rutrum lacinia dolor. Morbi placerat porttitor sapien,
+                    eget bibendum diam feugiat et. Aenean ornare interdum eros, consectetur semper libero cursus et. In gravida
+                    tempus iaculis. Etiam in nulla et urna sollicitudin blandit. Praesent maximus ultrices leo quis porta.
+                </p>
+                <p>
+                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras porta
+                    quam eget lorem tincidunt, ut fringilla quam tempor. Curabitur fermentum consequat sem, non iaculis elit.
+                    Maecenas euismod diam consequat odio tincidunt condimentum eu ac nulla. Curabitur scelerisque in mauris
+                    vitae venenatis. Nam accumsan ex sed leo tincidunt, ut ornare justo congue. Donec consectetur nisl eu ante
+                    suscipit, non molestie odio malesuada. Aliquam laoreet molestie sem, eget euismod neque euismod at. In
+                    rhoncus ipsum eget quam maximus, ut lacinia eros luctus. Nam vitae urna auctor tortor dictum pulvinar quis
+                    et felis.
+                </p>
+            </div>
+        </div>
+    </div>
+
 
 {% endblock %}

@@ -10,3 +10,14 @@ liip_imagine:
             filters:
                relative_resize:
                     widen: 500
+               watermark:
+                    image: ../public/imgs/watermark.png
+                    size: 0.1
+                    position: bottomright
+
+        painting_watermark:
+            filters:
+               watermark:
+                    image: ../public/imgs/watermark.png
+                    size: 0.1
+                    position: bottomright
