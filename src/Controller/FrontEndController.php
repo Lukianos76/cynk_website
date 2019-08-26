@@ -34,4 +34,20 @@ class FrontEndController extends AbstractController
     {
         return $this->render('about.html.twig');
     }
+
+    /**
+     * @Route("/mentions-legales", name="legals")
+     */
+    public function legals()
+    {
+        return $this->render('legals.html.twig');
+    }
+
+    /**
+     * @Route("/politique-de-confidentialité", name="confidentiality")
+     */
+    public function confidentiality()
+    {
+        return $this->render('confidentiality.html.twig');
+    }
 }

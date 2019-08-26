@@ -331,6 +331,24 @@ a:hover>i.circle-icon{
     }
 }
 
+/*--  LEGALS  --*/
+#legals{
+    margin: 40px auto;
+    font-family: "Open Sans", sans-serif;
+}
+#legals strong{
+    font-weight: 400;
+}
+#legals h3{
+    font-size: 36px;
+    text-transform: uppercase;
+    font-weight: 800;
+    text-align: center;
+}
+#legals h4 strong{
+    font-size: 24px;
+    font-weight: 600;
+}
 
 
 
