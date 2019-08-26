@@ -91,6 +91,9 @@ p{
         font-size: 24px;
         padding-left: 24px;
     }
+    .uk-navbar-dropdown{
+        width: 100%;
+    }
 }
 
         /*--  MAIN NAV  --*/

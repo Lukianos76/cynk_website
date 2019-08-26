@@ -1,8 +1,14 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block title %}Mes oeuvres{% endblock %}
-
 {% block stylesheets %}
+    <style>
+        @media screen and (max-width: 959px) {
+            .uk-navbar-dropdown {
+                top: 160px !important;
+            }
+        }
+    </style>
 {% endblock %}
 
 {% block body %}
