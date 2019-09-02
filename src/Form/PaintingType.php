@@ -16,12 +16,11 @@ class PaintingType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('creationDate', DateType::class )
+            ->add('creationDate', DateType::class)
             ->add('title', TextType::class)
             ->add('imageFile', FileType::class, [
                 'required' => false
-            ])
-        ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

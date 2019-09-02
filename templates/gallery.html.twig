@@ -20,17 +20,18 @@
                 {% for painting in paintings %}
                     {% if date != painting.year %}
                         {% set date = painting.year %}
-                        <li ><a href="#annee{{ date }}">{{ date }}</a></li>
+                        <li><a href="#annee{{ date }}">{{ date }}</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
         </div>
     </nav>
 
-    <div id="gallery" >
-        <div class="uk-width-2-3@l uk-width-1-2@xl uk-align-center uk-text-center gallery-text">
+
+    <div class="site-section">
+        <div class="uk-container uk-container-small page-header">
             <h2>Mes Oeuvres</h2>
-            <p class>
+            <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut egestas odio, id fermentum justo. Nunc
                 pulvinar nunc tellus, eget finibus nisi scelerisque ut. Nulla lobortis, lorem mollis mollis malesuada,
                 elit velit imperdiet velit, id dignissim quam sem laoreet magna. Quisque imperdiet eu eros et rhoncus.
@@ -41,39 +42,44 @@
         </div>
         <div uk-grid>
             <div class="uk-width-1-5 uk-visible@m gallery-nav">
-                <ul  uk-scrollspy-nav="closest: li; scroll: true; offset: 98" class="uk-nav uk-nav-default" uk-sticky="offset: 152;">
+                <ul uk-scrollspy-nav="closest: li; scroll: true; offset: 98" class="uk-nav uk-nav-default"
+                    uk-sticky="offset: 152;">
                     {% set date = null %}
                     {% for painting in paintings %}
                         {% if date != painting.year %}
                             {% set date = painting.year %}
-                            <li ><a href="#annee{{ date }}">{{ date }}</a></li>
+                            <li><a href="#annee{{ date }}">{{ date }}</a></li>
                         {% endif %}
                     {% endfor %}
                 </ul>
             </div>
             <div class="uk-width-4-5@m uk-width-1-1 painting-grid">
                 <div class="uk-container" uk-lightbox="animation: slide">
-                {% set date = null %}
-                {% for painting in paintings %}
+                    {% set date = null %}
+                    {% for painting in paintings %}
                     {% if date != painting.year %}
-                        {% if date != null %}
-                        </div>
-                        <div class="year-divider"></div>
-                        {% endif %}
-                        {% set date = painting.year %}
-                        <div id="annee{{ date }}" class="uk-child-width-1-2@s year-container" uk-grid="masonry:true;" uk-scrollspy="target: > .painting-container; cls: uk-animation-fade; delay: 300" >
+                    {% if date != null %}
+                </div>
+                <div class="divider"></div>
+                {% endif %}
+                {% set date = painting.year %}
+                <div id="annee{{ date }}" class="uk-child-width-1-2@s year-container" uk-grid="masonry:true;"
+                     uk-scrollspy="target: > img; cls: uk-animation-fade; delay: 300">
                     {% endif %}
-                            <div class="painting-container" id="{{ painting.slug }}">
-                                <a href="{{ vich_uploader_asset(painting, 'imageFile')  | imagine_filter('painting_watermark') }}" data-caption="{{painting.title}}">
-                                    <div class="uk-transition-toggle uk-width-1-1 uk-padding-remove uk-inline" >
-                                    <img class="painting tuk-width-1-1 uk-padding-remove" data-src="{{ vich_uploader_asset(painting, 'imageFile') | imagine_filter('painting_thumb') }}" alt="{{ painting.title }}" title="{{ painting.title }}" uk-img>
-                                        <div class="uk-transition-fade uk-overlay uk-overlay-default painting-overlay uk-position-cover uk-flex uk-flex-center uk-flex-middle uk-overlay uk-position-cover">
-                                            <h3 class="uk-text-center">{{ painting.title }}</h3>
-                                        </div>
-                                    </div>
-                                </a>
+                    <div id="{{ painting.slug }}">
+                        <a href="{{ vich_uploader_asset(painting, 'imageFile')  | imagine_filter('painting_watermark') }}"
+                           data-caption="{{ painting.title }}">
+                            <div class="uk-transition-toggle uk-width-1-1 uk-padding-remove uk-inline">
+                                <img class="painting tuk-width-1-1 uk-padding-remove"
+                                     data-src="{{ vich_uploader_asset(painting, 'imageFile') | imagine_filter('painting_thumb') }}"
+                                     alt="{{ painting.title }}" title="{{ painting.title }}" uk-img>
+                                <div class="uk-transition-fade uk-overlay uk-overlay-default uk-position-cover uk-flex uk-flex-center uk-flex-middle">
+                                    <h3 class="uk-text-center">{{ painting.title }}</h3>
+                                </div>
                             </div>
-                {% endfor %}
+                        </a>
+                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>

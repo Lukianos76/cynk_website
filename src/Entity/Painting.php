@@ -86,7 +86,7 @@ class Painting
     {
         $this->imageFile = $image;
 
-        if($image) {
+        if ($image) {
             $this->updatedAt = new \DateTime('now');
         }
     }
@@ -116,6 +116,7 @@ class Painting
         $slugify = new Slugify();
         return $slugify->slugify($this->title, "-");
     }
+
     public function getYear()
     {
         $date = $this->creationDate->format('Y');

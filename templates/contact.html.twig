@@ -1,0 +1,75 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block bodystyle %}style="height: 100%"{% endblock %}
+
+{% block body %}
+    <div class="site-section">
+
+        <div class="uk-container uk-container-small  full-page">
+            <div class="page-header">
+                <h2>Contact</h2>
+                <p class="uk-text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut egestas odio,
+                    id fermentum justo. Nunc
+                    pulvinar nunc tellus, eget finibus nisi scelerisque ut. Nulla lobortis, lorem mollis mollis
+                    malesuada,
+                    elit velit imperdiet velit, id dignissim quam sem laoreet magna. Quisque imperdiet eu eros et
+                    rhoncus.
+                    Pellentesque aliquet sed nibh ut imperdiet. Duis auctor leo a ligula bibendum, a rutrum sem aliquet.
+                    Quisque arcu libero, pellentesque ac malesuada vel, dapibus id arcu. Quisque nec tincidunt metus.
+                    Phasellus finibus rutrum tincidunt.</p>
+            </div>
+            {{ form_start(form) }}
+            <div class="uk-child-width-expand@s uk-margin" uk-grid>
+                <div>
+                    <div>
+                        <div>
+                            <label class="uk-form-label" for="form-stacked-text">Votre prénom :</label>
+                            <div class="uk-form-controls">
+                                {{ form_widget(form.firstName, {'attr': {'class': 'uk-input'}}) }}
+                                {{ form_errors(form.firstName) }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <div>
+                            <label class="uk-form-label" for="form-stacked-text">Votre nom :</label>
+                            <div class="uk-form-controls">
+                                {{ form_widget(form.lastName, {'attr': {'class': 'uk-input'}}) }}
+                                {{ form_errors(form.lastName) }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="uk-margin">
+                <label class="uk-form-label" for="form-stacked-text">Votre adresse email :</label>
+                <div class="uk-form-controls">
+                    {{ form_widget(form.email, {'attr': {'class': 'uk-input'}}) }}
+                    {{ form_errors(form.email) }}
+                </div>
+            </div>
+            <div class="uk-margin">
+                <label class="uk-form-label" for="form-stacked-text">Object de votre message :</label>
+                <div class="uk-form-controls">
+                    {{ form_widget(form.subject, {'attr': {'class': 'uk-input'}}) }}
+                    {{ form_errors(form.subject) }}
+                </div>
+            </div>
+            <div class="uk-margin">
+                <label class="uk-form-label" for="form-stacked-text">Votre message :</label>
+                <div class="uk-form-controls">
+                    {{ form_widget(form.message, {'attr': {'class': 'uk-textarea', 'rows' : '10'}}) }}
+                    {{ form_errors(form.message) }}
+                </div>
+            </div>
+            <div class="uk-margin">
+                <button class="uk-button uk-button-default">Envoyer</button>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
