@@ -62,9 +62,9 @@ class FrontEndController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $notification->notify($contact);
             $this->addFlash('success', 'Votre email a bien été envoyé');
-//            return $this->redirectToRoute('contact.html.twig', [
-//                'form' => $form->createView()
-//            ]);
+            return $this->redirectToRoute('contact.html.twig', [
+                'form' => $form->createView()
+            ]);
         }
 
         return $this->render('contact.html.twig', [
