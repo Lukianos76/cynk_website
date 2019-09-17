@@ -1,13 +1,20 @@
-<!DOCTYPE html>
+{% extends 'partials/base.html.twig' %}
 
-<title>Edit Painting</title>
+{% block title %}Editer le tableau{% endblock %}
+
+{% block bodystyle %}style="height: 100%"{% endblock %}
 
 {% block body %}
-    <h1>Edit Painting</h1>
+    <div class="site-section" uk-height-viewport="offset-top:80px; offset-bottom:30px">
 
-    {{ include('painting/_form.html.twig', {'button_label': 'Update'}) }}
+        <div class="uk-container uk-container-small  full-page">
+            <div class="page-header">
+                <h2>Editer le tableau</h2>
+            </div>
 
-    <a href="{{ path('painting_index') }}">back to list</a>
+            {{ include('painting/_form.html.twig')}}
+            <a class="uk-margin uk-button uk-button-secondary" href="{{ path('painting_index') }}">Retour au tableau de bord</a>
 
-    {{ include('painting/_delete_form.html.twig') }}
+        </div>
+    </div>
 {% endblock %}

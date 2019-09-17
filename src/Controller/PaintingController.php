@@ -9,9 +9,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 /**
- * @Route("/painting")
+ * @Route("/admin")
+ * @IsGranted("ROLE_USER")
  */
 class PaintingController extends AbstractController
 {
@@ -21,7 +23,7 @@ class PaintingController extends AbstractController
     public function index(PaintingRepository $paintingRepository): Response
     {
         return $this->render('painting/index.html.twig', [
-            'paintings' => $paintingRepository->findAll(),
+            'paintings' => $paintingRepository->findOrderByYear(),
         ]);
     }
 
@@ -45,16 +47,6 @@ class PaintingController extends AbstractController
         return $this->render('painting/new.html.twig', [
             'painting' => $painting,
             'form' => $form->createView(),
-        ]);
-    }
-
-    /**
-     * @Route("/{id}", name="painting_show", methods={"GET"})
-     */
-    public function show(Painting $painting): Response
-    {
-        return $this->render('painting/show.html.twig', [
-            'painting' => $painting,
         ]);
     }
 

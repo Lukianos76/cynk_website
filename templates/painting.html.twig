@@ -1,0 +1,57 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block bodystyle %}style="height: 100%"{% endblock %}
+
+{% block body %}
+    <div class="site-section">
+
+        <div class="uk-container uk-container-small  full-page">
+            <div class="page-header">
+                <h2>{{painting.title}}</h2>
+            </div>
+            <div>
+                <img  class="uk-margin" data-src="{{ vich_uploader_asset(painting, 'imageFile')  | imagine_filter('painting_watermark') }}" alt="{{ painting.title }}" uk-img>
+            </div>
+            <div>
+                <div>
+                    {% if painting.comments|length >0 %}
+                        {% for comment in painting.comments %}
+                            <article class="uk-comment">
+                                <header class="uk-comment-header uk-grid-medium uk-flex-middle" uk-grid>
+                                    <div class="uk-width-expand">
+                                        <h4 class="uk-comment-title uk-margin-remove"><a class="uk-link-reset"
+                                                                                         href="#"> {{ comment.author }}</a>
+                                        </h4>
+                                        <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
+                                            <li><a href="#">{{ comment.createdAt|date('d/m/Y à H:i') }}</a></li>
+                                        </ul>
+                                    </div>
+                                </header>
+                                <div class="uk-comment-body">
+                                    <p>{{ comment.content|raw }}</p>
+                                </div>
+                                {% if is_granted('ROLE_USER') %}
+                                    {% include 'partials/_delete_comment_form.html.twig' %}
+                                {% endif %}
+                            </article>
+                            <div class="divider"></div>
+                        {% endfor %}
+                    {% else %}
+                        <p>Soyez le premier à commenter cet article!</p>
+                    {% endif %}
+                    <div>
+                        <p class="uk-text-lead">
+                            Ajouter un commentaire
+                        </p>
+                        {% include "partials/_comment_form.html.twig" %}
+                    </div>
+                </div>
+            </div>
+
+
+            <a class="uk-button uk-button-secondary uk-align-left" href="{{ path('gallery') }}">Retour à la galerie</a>
+        </div>
+    </div>
+{% endblock %}

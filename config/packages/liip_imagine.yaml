@@ -14,6 +14,11 @@ liip_imagine:
                     image: ../public/imgs/watermark.png
                     size: 0.1
                     position: bottomright
+        painting_mini_thumb:
+          quality: 75
+          filters:
+            relative_resize:
+              widen: 100
 
         painting_watermark:
             filters:

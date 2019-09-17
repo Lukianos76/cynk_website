@@ -32,12 +32,8 @@
         <div class="uk-container uk-container-small page-header">
             <h2>Mes Oeuvres</h2>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut egestas odio, id fermentum justo. Nunc
-                pulvinar nunc tellus, eget finibus nisi scelerisque ut. Nulla lobortis, lorem mollis mollis malesuada,
-                elit velit imperdiet velit, id dignissim quam sem laoreet magna. Quisque imperdiet eu eros et rhoncus.
-                Pellentesque aliquet sed nibh ut imperdiet. Duis auctor leo a ligula bibendum, a rutrum sem aliquet.
-                Quisque arcu libero, pellentesque ac malesuada vel, dapibus id arcu. Quisque nec tincidunt metus.
-                Phasellus finibus rutrum tincidunt.
+                Voici toutes mes œuvres triées par ordre chronologique. Vous pouvez cliquer sur une année pour y accéder directement et ainsi voir l'évolution de mon travail.
+                N'hésitez pas à laisser un commentaire afin de me dire les émotions que vous font ressentir mes tableaux et ce qu'ils évoquent pour vous.
             </p>
         </div>
         <div uk-grid>
@@ -54,7 +50,7 @@
                 </ul>
             </div>
             <div class="uk-width-4-5@m uk-width-1-1 painting-grid">
-                <div class="uk-container" uk-lightbox="animation: slide">
+                <div class="uk-container">
                     {% set date = null %}
                     {% for painting in paintings %}
                     {% if date != painting.year %}
@@ -66,11 +62,12 @@
                 <div id="annee{{ date }}" class="uk-child-width-1-2@s year-container" uk-grid="masonry:true;"
                      uk-scrollspy="target: > img; cls: uk-animation-fade; delay: 300">
                     {% endif %}
-                    <div id="{{ painting.slug }}">
+                    <div>
+                    <div id="{{ painting.slug }}" uk-lightbox="animation: slide">
                         <a href="{{ vich_uploader_asset(painting, 'imageFile')  | imagine_filter('painting_watermark') }}"
                            data-caption="{{ painting.title }}">
                             <div class="uk-transition-toggle uk-width-1-1 uk-padding-remove uk-inline">
-                                <img class="painting tuk-width-1-1 uk-padding-remove"
+                                <img class="painting uk-width-1-1 uk-padding-remove"
                                      data-src="{{ vich_uploader_asset(painting, 'imageFile') | imagine_filter('painting_thumb') }}"
                                      alt="{{ painting.title }}" title="{{ painting.title }}" uk-img>
                                 <div class="uk-transition-fade uk-overlay uk-overlay-default uk-position-cover uk-flex uk-flex-center uk-flex-middle">
@@ -79,6 +76,11 @@
                             </div>
                         </a>
                     </div>
+                    <div class="uk-text-center">
+                        <a class="uk-margin-small-top uk-button uk-button-primary" href="{{ path('gallery_show', {'id': painting.id}) }}" type="button"><i class="fas fa-comments"></i> {{painting.comments | length}} | Ecrire un commentaire</a>
+                    </div>
+                    </div>
+
                     {% endfor %}
                 </div>
             </div>

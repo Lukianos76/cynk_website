@@ -1,0 +1,56 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block bodystyle %}style="min-height: 100%"{% endblock %}
+
+{% block body %}
+    <div class="site-section" uk-height-viewport>
+
+        <div class="uk-container uk-container-small   full-page" style="height: 100%" uk-height-viewport="offset-bottom:35px; offset-top:80px">
+            <div class="uk-margin-remove uk-align-center uk-text-center">
+            <div class="page-header">
+                <p><i class="fas fa-user fa-3x" style="color:#035388"></i></p>
+                <h2 class="uk-margin-remove">Connexion</h2>
+            </div>
+            <form method="post" class="uk-form-stacked">
+                {% if error %}
+                    <div class="uk-alert uk-alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                {% endif %}
+
+                {% if app.user %}
+                    <div class="uk-margin">
+                        Vous êtes déjà connecté, <a href="{{ path('app_logout') }}">déconnexion</a>
+                    </div>
+                {% endif %}
+                <div class="uk-margin">
+                    <label class="uk-form-label" for="form-stacked-text">Nom d'utilisateur :</label>
+                    <div class="uk-form-controls">
+                        <input type="text" value="{{ last_username }}" name="username" id="inputUsername"
+                               class="form-control"
+                               placeholder="Nom d'utilisateur" required autofocus>
+                    </div>
+                </div>
+                <div class="uk-margin">
+                    <label class="uk-form-label" for="form-stacked-text">Mot de passe :</label>
+                    <div class="uk-form-controls">
+                        <input type="password" name="password" id="inputPassword" class="form-control"
+                               placeholder="Mot de passe"
+                               required>
+                    </div>
+                </div>
+
+
+                <input type="hidden" name="_csrf_token"
+                       value="{{ csrf_token('authenticate') }}"
+                >
+
+                <div class="uk-margin">
+                <button class="uk-button uk-button-default" type="submit">
+                    Connexion
+                </button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

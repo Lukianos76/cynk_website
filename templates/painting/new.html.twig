@@ -1,11 +1,20 @@
-<!DOCTYPE html>
+{% extends 'partials/base.html.twig' %}
 
-<title>New Painting</title>
+{% block title %}Nouveau tableau{% endblock %}
+
+{% block bodystyle %}style="height: 100%"{% endblock %}
 
 {% block body %}
-    <h1>Create new Painting</h1>
+    <div class="site-section" uk-height-viewport="offset-top:80px; offset-bottom:30px">
 
-    {{ include('painting/_form.html.twig') }}
+        <div class="uk-container uk-container-small  full-page">
+            <div class="page-header">
+                <h2>Nouveau tableau</h2>
+            </div>
 
-    <a href="{{ path('painting_index') }}">back to list</a>
+            {{ include('painting/_form.html.twig')}}
+            <a class="uk-margin uk-button uk-button-secondary" href="{{ path('painting_index') }}">Retour au tableau de bord</a>
+
+        </div>
+    </div>
 {% endblock %}

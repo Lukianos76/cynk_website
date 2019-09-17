@@ -2,12 +2,16 @@
 
 namespace App\Controller;
 
+use App\Entity\Comment;
 use App\Entity\Contact;
+use App\Entity\Painting;
+use App\Form\CommentType;
 use App\Form\ContactType;
 use App\Notification\ContactNotification;
 use App\Repository\PaintingRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 
@@ -24,11 +28,50 @@ class FrontEndController extends AbstractController
     /**
      * @Route("/mes-oeuvres", name="gallery")
      */
-    public function gallery(PaintingRepository $paintingRepository)
+    public function gallery(Request $request, PaintingRepository $paintingRepository)
     {
-        return $this->render('gallery.html.twig', [
+        return $this->render('gallery.html.twig', array(
             'paintings' => $paintingRepository->findOrderByYear(),
+        ));
+    }
+
+    /**
+     * @Route("/mes-oeuvres/{id}", methods={"GET","POST"}, name="gallery_show")
+     */
+    public function painting(Request $request, Painting $painting): Response
+    {
+        $comment = new Comment();
+        $form = $this->createForm(CommentType::class, $comment);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $painting->addComment($comment);
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($comment);
+            $em->flush();
+
+            $this->addFlash('success', "Votre commentaire est bien enregistré");
+        }
+
+        return $this->render('painting.html.twig', [
+            'painting' => $painting,
+            'form' => $form->createView()
         ]);
+    }
+
+    /**
+     * @Route("/{id}", name="comment_delete", methods={"DELETE"})
+     */
+    public function delete(Request $request, Comment $comment): Response
+    {
+        if ($this->isCsrfTokenValid('delete'.$comment->getId(), $request->request->get('_token'))) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($comment);
+            $entityManager->flush();
+        }
+
+        return $this->redirectToRoute('gallery');
     }
 
     /**
